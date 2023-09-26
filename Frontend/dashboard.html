@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT</title>
+    <link rel="stylesheet" href="./styles/dasboard.css">
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script> -->
+</head>
+<body>
+   <div class="navbar">
+    <a href="./dashboard.html"><img src="./images/SIT logo.png" alt="error"></a>
+    <a href="#" id="clgName">Bus Tracking App(SIT)</a>
+    <div class="profile">
+        <img src="./images/icons8-customer-26.png" id="profile" alt="error">
+        <h3 id="nameOfUser"></h3>
+    </div>
+   </div>
+   <div class="main">
+    <nav class="nav">
+        <div><h2 class="nav_logo-name">Select Bus</h2>
+            <div class="nav_list">
+                <a href="https://www.google.com/maps/place/Miraj,+Maharashtra/@16.8235543,74.6043614,13z/data=!3m1!4b1!4m6!3m5!1s0x3bc123ca0f0a504f:0x8790662199014c4f!8m2!3d16.8222363!4d74.
+                6508894!16zL20vMDNkbng0?entry=ttu" id="busLink1" 
+                class="nav_link active"><i class='bx bx-bus nav_icon'></i> <span class="nav_name">Bus No.1</span></a>
+                <a href="https://www.google.com/maps/place/Jaysingpur,+Maharashtra/@16.7669152,74.5380835,14z/data=!3m1!4b1!4m6!3m5!1s0x3bc11f2f4aa1f8ad:
+                0x6ed3d90e33621e9!8m2!3d16.7787019!4d74.554442!16zL20vMGY1MTRj?entry=ttu" class="nav_link active"><i class='bx bx-bus nav_icon'></i> <span class="nav_name">Bus No.2</span></a>
+                <a href="https://www.google.com/maps/place/Kolhapur,+Maharashtra/@16.7084522,74.156466,12z/data=!4m6!3m5!1s0x3bc1000cdec07a29:0xece8ea642952e
+                42f!8m2!3d16.7049873!4d74.2432527!16zL20vMDF4cG4y?entry=ttu" class="nav_link active"><i class='bx bx-bus nav_icon'></i> <span class="nav_name">Bus No.3</span></a>
+                <a href="https://www.google.com/maps/place/Sangli,+Maharashtra/@16.8542782,74.5429004,13z/data=!3m1!4b1!4m6!3m5!1s0x3bc10c8187f060eb:0x37911f53cdc1ddb3!8m2
+                !3d16.8523973!4d74.5814773!16zL20vMDJucG1k?entry=ttu" class="nav_link active"><i class='bx bx-bus nav_icon'></i> <span class="nav_name">Bus No.4</span></a>
+                <a href="https://www.google.com/maps/place/Kagal,+Maharashtra/@16.5892835,74.2748726,13z/data=!3m1!4b1!4m6!3m5!1s0x3bc0fbe3ea86aacf:0xed8af5a130723d95!8m2!3d16.5886465!4d74.3085454!16zL20vMDl0eXMw?entry=ttu" class="nav_link active"><i class='bx bx-bus nav_icon'></i> <span class="nav_name">Bus No.5</span></a>
+               
+            </div>
+        </div>
+    </nav>
+    <div class="map">
+        <img src="./images/imgonline-com-ua-blur-0M3iVtAbYzxOKDp.jpg" alt="error">
+    
+    </div>
+   </div> 
+</body>
+<script>
+    function initMap() {
+      // Replace these coordinates with the initial location you want to display
+      var initialLocation = { lat: 16.8235543, lng: 74.6043614 };
+  
+      var map = new google.maps.Map(document.querySelector('.map'), {
+        center: initialLocation,
+        zoom: 13 // You can adjust the zoom level as needed
+      });
+  
+      // Create a marker if needed
+      var marker = new google.maps.Marker({
+        position: initialLocation,
+        map: map,
+        title: 'Your Location'
+      });
+  
+      // You can add more markers or custom map functionality as needed
+    }
+  </script>
+  
+</html>
+<script>
+const nameEl = document.getElementById("nameOfUser");
+const userInfoString = localStorage.getItem("userInfo");
+
+if (userInfoString) {
+  // Parse the JSON string into an object
+  const userInfo = JSON.parse(userInfoString);
+
+  // Now you can access the properties of the userInfo object
+  console.log(userInfo.userName);
+  nameEl.innerText=userInfo.userName
+} else {
+  console.log("No userInfo found in localStorage.");
+}
+
+</script>
