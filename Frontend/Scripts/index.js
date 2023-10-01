@@ -3,7 +3,7 @@ const signup=document.getElementById("signup-btn");
 const btn=document.getElementById("btn");
 
 function redirect(){
-    window.location.href="../login_signup.html";
+    window.location.href="./login_signup.html";
 }
 
 login.addEventListener("click",()=>{

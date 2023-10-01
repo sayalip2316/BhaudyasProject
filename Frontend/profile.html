@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/profile.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="./dashboard.html"><img src="./images/SIT logo.png" alt="error"></a>
+        <a href="#" id="clgName">SIT Bus Tracker 
+            <img src="./images/icons8-bus-64.png" alt="error">
+          </a>
+        <div class="profile">
+            <button id="logout">Log Out=></button>
+        </div>
+       </div>
+       <div class="main">
+         <div>
+            <img src="https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg?w=360" alt="error">
+            <h1 id="name"></h1>
+            <h3 id="email"></h3>
+            <h3 id="prn"></h3>
+         </div>
+       </div>
+</body>
+</html>
+<script>
+    const userInfo=localStorage.getItem("userInfo");
+    console.log(userInfo)
+    const user=JSON.parse(userInfo)
+
+    const nameEl=document.getElementById("name");
+    nameEl.innerText=`Name: ${user.userName}`;
+    const emailEl=document.getElementById("email");
+    emailEl.innerText=`Email: ${user.email}`;
+    const prnEl=document.getElementById("prn");
+    prnEl.innerText=`PRN No: ${user.PRN}`;
+
+
+    const logoutButton = document.getElementById("logout");
+
+    logoutButton.addEventListener("click",()=>{
+        handleLogout()
+    })
+
+    function handleLogout(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("userInfo");
+    window.location.href = "./index.html";
+    }
+
+</script>

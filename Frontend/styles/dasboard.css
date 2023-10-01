@@ -23,8 +23,14 @@ body{
 #clgName{
     text-decoration: none;
     color:red;
-    font-size: larger;
+    font-size: 30px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+#clgName>img{
+    width:20%;
+    height:60px;
 }
 #loginSinup{
     text-decoration: none;
@@ -69,4 +75,7 @@ body{
     width:100%;
     
   }
-  
+  #identity{
+    text-decoration: none;
+    color: black;
+  }
