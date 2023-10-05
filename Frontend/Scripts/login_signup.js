@@ -9,7 +9,7 @@ const loader=document.getElementById("loader");
 
 loader.style.display="none";
 
-const BaseURL="http://localhost:4500";
+const BaseURL="https://bustrackingapp.onrender.com";
 
 
 signInform.addEventListener("submit",(event)=>{
@@ -93,8 +93,8 @@ loginForm.addEventListener("submit",(event)=>{
 //------------------------ popup message-------------------------------
 
 const popup=document.getElementById("popup");
-const imgurl_ok="../images/ok.png";
-const imageurl_failed="../images/cancel.png";
+const imgurl_ok="./images/ok.png";
+const imageurl_failed="./images/cancel.png";
 
 function showpopup(message,imgurl,isredirect=false){
     

@@ -218,3 +218,19 @@ transform: scale(.6);
 #popup_logo{
     width: 50px;
 }
+
+/* admin login */
+.admin_login{
+    padding-bottom: 30px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+#login_form>a{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color:teal;
+    margin-top: 20px;
+}

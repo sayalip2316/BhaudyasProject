@@ -21,7 +21,7 @@ userRouter.post("/register", async (req, res) => {
             await user.save();
             res.status(200).send({ 
                 isError:false,
-                message: "Registration Succesfull..." 
+                message: "Registration Successfull..." 
             });
         });
     } catch (error) {
@@ -46,7 +46,7 @@ userRouter.post("/login", async (req, res) => {
                     let accesstoken = jwt.sign({ "userID": user._id }, 'accesstoken', { expiresIn: "7d" });
                     res.status(200).send({ 
                         isError:false,
-                        message: "login success", 
+                        message: "login successfull!!", 
                         token: accesstoken, 
                         user
                     })
@@ -74,4 +74,35 @@ userRouter.post("/login", async (req, res) => {
     }
 })
 
+
+userRouter.post("/admin/login", async (req, res) => {
+   const {email,password}=req.body
+   try {
+    if(email==="sit@gmail.com" && password==="sit@123"){
+        res.status(200).send({
+            isError:false,
+            message: "login successfull!!"
+        })
+    }else{
+        res.status(400).send({ 
+            isError:true,
+            message: "Incorrect email or password"
+        })
+    }
+   } catch (error) {
+    res.status(400).send({ 
+            isError:true,
+            message: "Something Went Wrong Please Try After Some Time"
+        })
+   }
+});
+
+userRouter.get("/AllUsers",async(req,res)=>{
+try {
+    const users=await UserModel.find()
+    res.status(200).json(users)
+} catch (error) {
+    res.status(400).send(error)
+}
+})
 module.exports={userRouter}
